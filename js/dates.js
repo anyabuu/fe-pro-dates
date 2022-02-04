@@ -41,15 +41,17 @@ function getDay(date, lang) {
 function formatTime(date) {
 
   let minutes = date.getMinutes();
-
   let hours = date.getHours();
 
-  if (minutes||hours < 10) {
-     minutes = `0${minutes}`
-     hours = `0${hours}`
+  function addNull(item){
+    if (item < 10) {
+      return item = `0${item}`
+    } else {
+      return item;
+    }
   }
 
-  return `${hours}:${minutes}`;
+  return `${addNull(hours)}:${addNull(minutes)}`;
 
 }
 
