@@ -42,11 +42,14 @@ function formatTime(date) {
 
   let minutes = date.getMinutes();
 
-  if (minutes < 10) {
+  let hours = date.getHours();
+
+  if (minutes||hours < 10) {
      minutes = `0${minutes}`
+     hours = `0${hours}`
   }
 
-  return `${date.getHours()}:${minutes}`;
+  return `${hours}:${minutes}`;
 
 }
 
